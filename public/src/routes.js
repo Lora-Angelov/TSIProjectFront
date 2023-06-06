@@ -28,7 +28,7 @@ router.get('/films/random', (req, res) => __awaiter(void 0, void 0, void 0, func
             res.status(404).json({ message: 'No films found' });
         }
         else {
-            const randomFilm = rows[0];
+            const randomFilm = rows[0]; // Type assertion to RowDataPacket
             res.json(randomFilm);
         }
     }

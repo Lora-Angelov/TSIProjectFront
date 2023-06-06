@@ -34,8 +34,6 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 
 import mysql from 'mysql2/promise';
 
-
-
 var fs = require('fs');
 
 const db = mysql.createPool({
@@ -44,7 +42,7 @@ const db = mysql.createPool({
   password: 'Password1',
   database: 'sakila',
   ssl: {
-    ca: fs.readFileSync('src/DigiCertGlobalRootCA.crt.pem')
+    ca: fs.readFileSync('dist/src/DigiCertGlobalRootCA.crt.pem')
   }
 });
 

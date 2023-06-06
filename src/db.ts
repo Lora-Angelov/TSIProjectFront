@@ -9,7 +9,7 @@ const db = mysql.createPool({
   password: 'Password1',
   database: 'sakila',
   ssl: {
-    ca: fs.readFileSync('src/DigiCertGlobalRootCA.crt.pem')
+    ca: fs.readFileSync('dist/src/DigiCertGlobalRootCA.crt.pem')
   }
 });
 

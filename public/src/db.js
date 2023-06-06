@@ -21,7 +21,7 @@ const db = promise_1.default.createPool({
     password: 'Password1',
     database: 'sakila',
     ssl: {
-        ca: fs.readFileSync('src/DigiCertGlobalRootCA.crt.pem')
+        ca: fs.readFileSync('dist/src/DigiCertGlobalRootCA.crt.pem')
     }
 });
 exports.default = db;

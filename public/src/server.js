@@ -21,9 +21,7 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
 app.use(express_1.default.json());
-app.use((0, cors_1.default)({
-    origin: '*',
-}));
+app.use((0, cors_1.default)());
 // Serve static files
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.use(express_1.default.static('public'));
@@ -43,7 +41,7 @@ const db = promise_1.default.createPool({
     password: 'Password1',
     database: 'sakila',
     ssl: {
-        ca: fs.readFileSync('src/DigiCertGlobalRootCA.crt.pem')
+        ca: fs.readFileSync('dist/src/DigiCertGlobalRootCA.crt.pem')
     }
 });
 // API route for fetching films data
