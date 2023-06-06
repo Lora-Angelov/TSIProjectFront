@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/mysql": "^2.15.21",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.3.3",
     "react-scripts": "^5.0.1"
   },

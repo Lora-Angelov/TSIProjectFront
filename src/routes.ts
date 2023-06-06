@@ -11,6 +11,7 @@ import { getFilmsFromDatabase } from './db';
 
 const router = express.Router();
 
+
 /////FILMS////
 
 const app = express();
@@ -25,7 +26,7 @@ router.get('/films/random', async (req: Request, res: any) => {
     if (rows.length === 0) {
       res.status(404).json({ message: 'No films found' });
     } else {
-      const randomFilm = rows[0] as RowDataPacket;
+      const randomFilm = rows[0] as RowDataPacket; // Type assertion to RowDataPacket
       res.json(randomFilm);
     }
   } catch (error) {

@@ -6,12 +6,12 @@ import path from 'path';
 import express, { Request, Response } from 'express';
 
 
+
+
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors({
-  origin: '*',
-}));
+app.use(cors());
 
 
 // Serve static files
@@ -33,6 +33,8 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 import mysql from 'mysql2/promise';
+
+
 
 var fs = require('fs');
 
