@@ -1,21 +1,14 @@
-#!/usr/bin/env node
 import bodyParser from 'body-parser';
-import corsMiddleware from 'cors';
+import cors from 'cors';
 import routes from './routes';
 import actors from './actors';
 import path from 'path';
 import express, { Request, Response } from 'express';
-//import { getFilmsFromDatabase } from './db';
-
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
-const corsOptions = {
-  origin: '*'
-};
-
-app.use(corsMiddleware(corsOptions));
+app.use(cors());
 
 
 // Serve static files
