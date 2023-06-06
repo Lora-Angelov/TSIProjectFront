@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!response.ok) {
           throw new Error('Error fetching random film');
         }
-        return response.json();
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.indexOf('application/json') !== -1) {
+          return response.json();
+        } else {
+          throw new Error('Invalid response format');
+        }
       })
       .then((data) => {
         // Display the film details in the HTML

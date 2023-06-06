@@ -5,15 +5,18 @@ import actors from './actors';
 import path from 'path';
 import express, { Request, Response } from 'express';
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*',
+}));
 
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'build')));
-app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 
 app.use('/api', routes);
